@@ -60,12 +60,6 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 
 
 alias tidal='cd; cd code/tidal'
-alias gitAbortMerge='git merge --abort'
-alias gitShowAssumeUnchanged="git ls-files -v | grep '^[a-z]' | cut -c3-"
-alias gitdUntrackAllUnTrackedFiles="git ls-files -v | grep '^[a-z]' | cut -c 3- | tr '\012' '\000' | xargs -0 git update-index --no-assume-unchanged"
-alias gitRefreshPrune="git remote prune origin"
-
-
 
 alias awsTidalLogin="saml2aws login --session-duration=43200"
 alias awsTidalLogin2="aws-google-auth -u clement.boret@tidal.com -S 1042655796932 -I C00itggk3 -R us-east-1 -d 43200 -p default"
@@ -101,6 +95,7 @@ source ~/.dotfiles/mavensetup
 source ~/.dotfiles/npmsetup
 source ~/.dotfiles/dockersetup
 source ~/.dotfiles/gcloudsetup
+source ~/.dotfiles/gitsetup
 
 
 
