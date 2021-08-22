@@ -4,8 +4,11 @@ alias mvnSetVersion='mvn org.codehaus.mojo:versions-maven-plugin:2.8.1:set -Dpro
 alias mvnSetVersionNotAll='mvn org.codehaus.mojo:versions-maven-plugin:2.8.1:set -DgenerateBackupPoms=false'
 alias mvnUpdateTidalVersions='mvn org.codehaus.mojo:versions-maven-plugin:2.8.1:update-properties -Dincludes=com.tidal\*:\*,com.wimp\*:\* -DallowSnapshots=true -DgenerateBackupPoms=false;mvn org.codehaus.mojo:versions-maven-plugin:2.8.1:use-latest-versions -Dincludes=com.tidal\*:\*,com.wimp\*:\* -DallowSnapshots=true -DgenerateBackupPoms=false'
 alias mvnUpdateAllVersions='mvn org.codehaus.mojo:versions-maven-plugin:2.8.1:update-properties -DgenerateBackupPoms=false; mvn org.codehaus.mojo:versions-maven-plugin:2.8.1:use-latest-versions -DgenerateBackupPoms=false'
-alias mvnUpdateCboOnlyVersions='mvn org.codehaus.mojo:versions-maven-plugin:2.8.1:update-properties -DgenerateBackupPoms=false -DprocessParent=true -DexcludeReactor=false -Dincludes=com.cbo\*:\*; mvn org.codehaus.mojo:versions-maven-plugin:2.8.1:use-latest-versions -DgenerateBackupPoms=false -DprocessParent=true -DexcludeReactor=false -Dincludes=com.cbo\*:\*'
+alias mvnUpdateExampleVersions='mvn org.codehaus.mojo:versions-maven-plugin:2.8.1:update-properties -DallowSnapshots=true -DgenerateBackupPoms=false -DprocessParent=true -DexcludeReactor=false -Dincludes=com.example\*:\*; mvn org.codehaus.mojo:versions-maven-plugin:2.8.1:use-latest-versions -DallowSnapshots=true -DgenerateBackupPoms=false -DprocessParent=true -DexcludeReactor=false -Dincludes=com.example\*:\*'
 alias mvnList="mvn fr.jcgay.maven.plugins:buildplan-maven-plugin:list"
+alias mvnSetVersionToRelease="mvnSetVersion -DremoveSnapshot -DgenerateBackupPoms=false"
+alias mvnSetVersionToSnapshot="mvnSetVersion -DnextSnapshot=true -DgenerateBackupPoms=false"
+
 
 mvnChangedModules(){
     [ -z "$1" ] && echo "Expected command : mvn_changed_modules (install/build/clean or any maven command)" && exit 0
